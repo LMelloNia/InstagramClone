@@ -11,35 +11,22 @@ class LoginController: UIViewController {
 
     // MARK: - Properties
 
+    private var viewModel = LoginViewModel()
+
     private let iconImage: UIImageView = {
         let iv = UIImageView(image: #imageLiteral(resourceName: "Instagram_logo_white"))
         iv.contentMode = .scaleAspectFill
         return iv
     }()
 
-    private let emailTextField: UITextField = {
-        let tf = UITextField()
-        tf.borderStyle = .none
-        tf.textColor = .white
-        tf.keyboardAppearance = .dark
+    private let emailTextField: CustomTextField = {
+        let tf = CustomTextField(placeholder: "Email")
         tf.keyboardType = .emailAddress
-        tf.backgroundColor = UIColor(white: 1, alpha: 0.1)
-        tf.setHeight(50)
-        tf.attributedPlaceholder = NSAttributedString(string: "Email",
-                                                      attributes: [.foregroundColor: UIColor(white: 1, alpha: 0.7)])
         return tf
     }()
 
-    private let passwordTextField: UITextField = {
-        let tf = UITextField()
-        tf.borderStyle = .none
-        tf.textColor = .white
-        tf.keyboardAppearance = .dark
-        tf.keyboardType = .emailAddress
-        tf.backgroundColor = UIColor(white: 1, alpha: 0.1)
-        tf.setHeight(50)
-        tf.attributedPlaceholder = NSAttributedString(string: "Password",
-                                                      attributes: [.foregroundColor: UIColor(white: 1, alpha: 0.7)])
+    private let passwordTextField: CustomTextField = {
+        let tf = CustomTextField(placeholder: "Password")
         tf.isSecureTextEntry = true
         return tf
     }()
@@ -48,38 +35,24 @@ class LoginController: UIViewController {
         let button = UIButton(type: .system)
         button.setTitle("Log In", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1)
+        button.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1).withAlphaComponent(0.5)
         button.layer.cornerRadius = 5
         button.setHeight(50)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-        return button
-    }()
-
-    private let dontHaveAccountButton: UIButton = {
-        let button = UIButton(type: .system)
-
-        let atts: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor(white: 1, alpha: 0.7), .font:
-                                                    UIFont.systemFont(ofSize: 16)]
-        let attributedTitle = NSMutableAttributedString(string: "Dont't have an acount?  ", attributes: atts)
-
-        let boldAtts: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor(white: 1, alpha: 0.7), .font:
-                                                        UIFont.boldSystemFont(ofSize: 16)]
-        attributedTitle.append(NSAttributedString(string: "Sign Up", attributes: boldAtts))
-        button.setAttributedTitle(attributedTitle, for: .normal)
+        button.isEnabled = false
         return button
     }()
 
     private let forgotPasswordButton: UIButton = {
         let button = UIButton(type: .system)
+        button.attributedTitle(firstPart: "Forgot you password?", secondPart: "Get help signing in.")
+        return button
+    }()
 
-        let atts: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor(white: 1, alpha: 0.7), .font:
-                                                    UIFont.systemFont(ofSize: 16)]
-        let attributedTitle = NSMutableAttributedString(string: "Forgot you password? ", attributes: atts)
-
-        let boldAtts: [NSAttributedString.Key: Any] = [.foregroundColor: UIColor(white: 1, alpha: 0.7), .font:
-                                                        UIFont.boldSystemFont(ofSize: 16)]
-        attributedTitle.append(NSAttributedString(string: "Get help signing in.", attributes: boldAtts))
-        button.setAttributedTitle(attributedTitle, for: .normal)
+    private let dontHaveAccountButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.attributedTitle(firstPart: "Dont't have an acount?", secondPart: "Sign Up")
+        button.addTarget(self, action: #selector(handleShowSignUp), for: .touchUpInside)
         return button
     }()
 
@@ -89,20 +62,35 @@ class LoginController: UIViewController {
         super.viewDidLoad()
 
         configureUI()
+        configureNotificationObservers()
+    }
+
+    // MARK: - Actions
+
+    @objc func handleShowSignUp() {
+        let controller = RegistrationController()
+        navigationController?.pushViewController(controller, animated: true)
+    }
+
+    @objc func textDidChange(sender: UITextField) {
+        if sender == emailTextField {
+            viewModel.email = sender.text
+        } else {
+            viewModel.password = sender.text
+        }
+
+        loginButton.backgroundColor = viewModel.buttonBackgroundColor
+        loginButton.setTitleColor(viewModel.buttonTitleColor, for: .normal)
+        loginButton.isEnabled = viewModel.formIsValid
     }
 
     // MARK: - Helpers
 
     func configureUI() {
+        configureGradienLayer()
         view.backgroundColor = .white
         navigationController?.navigationBar.isHidden = true
         navigationController?.navigationBar.barStyle = .black
-
-        let gradient = CAGradientLayer()
-        gradient.colors = [UIColor.systemPurple.cgColor, UIColor.systemBlue.cgColor]
-        gradient.locations = [0, 1]
-        view.layer.addSublayer(gradient)
-        gradient.frame = view.frame
 
         view.addSubview(iconImage)
         iconImage.centerX(inView: view)
@@ -120,5 +108,10 @@ class LoginController: UIViewController {
         view.addSubview(dontHaveAccountButton)
         dontHaveAccountButton.centerX(inView: view)
         dontHaveAccountButton.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor)
+    }
+
+    func configureNotificationObservers() {
+        emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
     }
 }
