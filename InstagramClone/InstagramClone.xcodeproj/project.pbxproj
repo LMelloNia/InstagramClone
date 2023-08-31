@@ -28,6 +28,7 @@
 		DDD7E3192A9DEFA700E84CD1 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD7E3182A9DEFA700E84CD1 /* RegistrationController.swift */; };
 		DDD7E31B2A9F899F00E84CD1 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD7E31A2A9F899F00E84CD1 /* CustomTextField.swift */; };
 		DDD7E31D2A9F91F000E84CD1 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDD7E31C2A9F91F000E84CD1 /* AuthenticationViewModel.swift */; };
+		DDD7E31F2AA035A700E84CD1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DDD7E31E2AA035A700E84CD1 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		DDD7E3182A9DEFA700E84CD1 /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		DDD7E31A2A9F899F00E84CD1 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		DDD7E31C2A9F91F000E84CD1 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
+		DDD7E31E2AA035A700E84CD1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 				DD643BCE2A8E0B8E00DEEDDC /* Assets.xcassets */,
 				DD643BD02A8E0B8E00DEEDDC /* LaunchScreen.storyboard */,
 				DD643BD32A8E0B8E00DEEDDC /* Info.plist */,
+				DDD7E31E2AA035A700E84CD1 /* GoogleService-Info.plist */,
 			);
 			path = InstagramClone;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD643BD22A8E0B8E00DEEDDC /* LaunchScreen.storyboard in Resources */,
+				DDD7E31F2AA035A700E84CD1 /* GoogleService-Info.plist in Resources */,
 				DD643BCF2A8E0B8E00DEEDDC /* Assets.xcassets in Resources */,
 				DD643BCD2A8E0B8D00DEEDDC /* Main.storyboard in Resources */,
 			);
