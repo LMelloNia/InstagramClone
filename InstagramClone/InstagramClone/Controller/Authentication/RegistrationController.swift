@@ -12,6 +12,7 @@ class RegistrationController: UIViewController {
     // MARK: - Properties
 
     private var viewModel = RegistrationViewModel()
+    private var profileImage: UIImage?
 
     private let plushPhotoButton: UIButton = {
         let button = UIButton(type: .system)
@@ -45,6 +46,7 @@ class RegistrationController: UIViewController {
         button.setHeight(50)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         button.isEnabled = false
+        button.addTarget(self, action: #selector(handleSign), for: .touchUpInside)
         return button
     }()
 
@@ -65,6 +67,27 @@ class RegistrationController: UIViewController {
     }
 
     // MARK: - Actions
+
+    @objc func handleSign() {
+        guard let email = emailTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
+        guard let fullname = fullnameTextField.text else { return }
+        guard let username = usernameTextField.text?.lowercased() else { return }
+        guard let profileImage else { return }
+
+        let credential = Authcredentials(email: email, password: password,
+                                         fullname: fullname, username: username,
+                                         profileImage: profileImage)
+
+        AuthService.registerUser(withCredential: credential) { error in
+            if let error = error {
+                print("DEBUG: Failed to register user \(error.localizedDescription)")
+                return
+            }
+            
+            self.dismiss(animated: true)
+        }
+    }
 
     @objc func handleShowSignUp() {
         navigationController?.popViewController(animated: true)
@@ -139,6 +162,7 @@ extension RegistrationController: UIImagePickerControllerDelegate, UINavigationC
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
 
         guard let selectedImgae = info[.editedImage] as? UIImage else { return }
+        profileImage = selectedImgae
 
         plushPhotoButton.layer.cornerRadius = plushPhotoButton.frame.width / 2
         plushPhotoButton.layer.masksToBounds = true

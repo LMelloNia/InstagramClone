@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class MainTabController: UITabBarController {
 
@@ -13,9 +14,21 @@ class MainTabController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configureViewControllers()
+        checkIfUserIsLoggedin()
+    }
 
+    // MARK: - API
+
+    func checkIfUserIsLoggedin() {
+        if Auth.auth().currentUser == nil {
+            DispatchQueue.main.async {
+                let controller = LoginController()
+                let nav = UINavigationController(rootViewController: controller)
+                nav.modalPresentationStyle = .fullScreen
+                self.present(nav, animated: true)
+            }
+        }
     }
 
     // MARK: - Helpers
@@ -24,8 +37,8 @@ class MainTabController: UITabBarController {
         if #available(iOS 15.0, *) {
             let appearance = UITabBarAppearance()
             appearance.configureWithOpaqueBackground()
-//            appearance.backgroundColor = .white
-//            tabBar.standardAppearance = appearance
+            //            appearance.backgroundColor = .white
+            //            tabBar.standardAppearance = appearance
             tabBar.scrollEdgeAppearance = tabBar.standardAppearance
         }
         let layout = UICollectionViewFlowLayout()
