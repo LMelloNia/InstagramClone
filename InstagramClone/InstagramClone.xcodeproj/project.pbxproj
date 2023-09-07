@@ -10,6 +10,7 @@
 		49796FE8D4DBD96DE4BB403C /* Pods_InstagramClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72399F32198571272668C942 /* Pods_InstagramClone.framework */; };
 		6FE3CD8150AD2EEC8266F6BB /* Pods_InstagramCloneTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E89975DF6E90174A361AF51 /* Pods_InstagramCloneTests.framework */; };
 		970A8D43F76634B64115BF8C /* Pods_InstagramClone_InstagramCloneUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64BEEA089C1BAF771091CADF /* Pods_InstagramClone_InstagramCloneUITests.framework */; };
+		DD0551002AA99E080023F4F1 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0550FF2AA99E080023F4F1 /* UserCell.swift */; };
 		DD32424B2AA0845200C85CD7 /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD32424A2AA0845200C85CD7 /* ImageUploader.swift */; };
 		DD32424D2AA0846300C85CD7 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD32424C2AA0846300C85CD7 /* AuthService.swift */; };
 		DD3242512AA08AA700C85CD7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD3242502AA08AA700C85CD7 /* GoogleService-Info.plist */; };
@@ -69,6 +70,7 @@
 		A710A997AF3DBC3FC545AE4F /* Pods-InstagramClone-InstagramCloneUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramClone-InstagramCloneUITests.debug.xcconfig"; path = "Target Support Files/Pods-InstagramClone-InstagramCloneUITests/Pods-InstagramClone-InstagramCloneUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B868EE4D6DC8DE8089AAB15E /* Pods-InstagramCloneTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramCloneTests.release.xcconfig"; path = "Target Support Files/Pods-InstagramCloneTests/Pods-InstagramCloneTests.release.xcconfig"; sourceTree = "<group>"; };
 		D656EBF45F4F95F41978EBB3 /* Pods-InstagramCloneTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramCloneTests.debug.xcconfig"; path = "Target Support Files/Pods-InstagramCloneTests/Pods-InstagramCloneTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DD0550FF2AA99E080023F4F1 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		DD32424A2AA0845200C85CD7 /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		DD32424C2AA0846300C85CD7 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		DD3242502AA08AA700C85CD7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -264,6 +266,7 @@
 				DD9907DD2AA1C1A700737960 /* Profile */,
 				DDD7E3112A9C72CC00E84CD1 /* FeedCell.swift */,
 				DDD7E31A2A9F899F00E84CD1 /* CustomTextField.swift */,
+				DD0550FF2AA99E080023F4F1 /* UserCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -542,6 +545,7 @@
 				DD643C032A8E285200DEEDDC /* ImageSelectorController.swift in Sources */,
 				DD643C052A8E286700DEEDDC /* NotificationController.swift in Sources */,
 				DDD7E31D2A9F91F000E84CD1 /* AuthenticationViewModel.swift in Sources */,
+				DD0551002AA99E080023F4F1 /* UserCell.swift in Sources */,
 				DD643C012A8E27D000DEEDDC /* SearchController.swift in Sources */,
 				DD643BC62A8E0B8D00DEEDDC /* AppDelegate.swift in Sources */,
 				DD93CACC2AA20FF6004C7D7C /* User.swift in Sources */,
