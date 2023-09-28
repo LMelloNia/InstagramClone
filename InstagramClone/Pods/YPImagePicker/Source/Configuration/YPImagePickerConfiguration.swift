@@ -139,7 +139,33 @@ public struct YPImagePickerConfiguration {
         YPFilter(name: "XRay", coreImageFilterName: "CIXRay")
         ]
     
+    /// Migration
     
+    public var videoCompression: String = AVAssetExportPresetHighestQuality
+    
+    public var videoExtension: AVFileType = .mov
+    
+    public var videoRecordingTimeLimit: TimeInterval = 60.0
+    
+    public var videoFromLibraryTimeLimit: TimeInterval = 60.0
+    
+    public var videoMinimumTimeLimit: TimeInterval = 3.0
+    
+    public var trimmerMaxDuration: Double = 60.0
+
+    public var trimmerMinDuration: Double = 3.0
+    
+    public var onlySquareImagesFromLibrary = false
+    
+    public var onlySquareFromLibrary = false
+    
+    public var libraryTargetImageSize = YPImageSize.original
+    
+    public var showsVideoInLibrary = false
+    
+    public var libraryMediaType = YPlibraryMediaType.photo
+    
+    public var maxNumberOfItems = 1
     
 }
 
