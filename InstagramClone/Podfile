@@ -26,6 +26,7 @@ target 'InstagramClone' do
   target 'InstagramCloneUITests' do
     # Pods for testing
   end
+end
 
 post_install do |installer|
       installer.pods_project.targets.each do |target|
@@ -37,5 +38,3 @@ post_install do |installer|
           end
       end
   end
-
-end
