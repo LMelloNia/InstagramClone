@@ -8,6 +8,8 @@
 import Firebase
 import FirebaseFirestore
 
+typealias FirestoreComplition = (Error?) -> Void
+
 struct UserService {
     static func fetchUser(completion: @escaping (User) -> Void) {
         guard let uid = Auth.auth().currentUser?.uid else { return }
@@ -25,5 +27,16 @@ struct UserService {
             let users = snapshot.documents.map({ User(dictionary: $0.data())})
             completion(users)
         }
+    }
+
+    static func follow(uid: String, complition: @escaping (FirestoreComplition)) {
+        guard let currentUid = Auth.auth().currentUser?.uid else { return }
+        COLLERTION_FOLLOWING.document(currentUid).collection("user-following").document(uid).setData([:]) { error in
+            COLLERTION_FOLLOWERS.document(uid).collection("user-followers").document(currentUid).setData([:], completion: complition)
+        }
+    }
+
+    static func unfollow(uid: String, complition: @escaping (FirestoreComplition)) {
+        
     }
 }
