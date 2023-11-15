@@ -9,5 +9,5 @@ import Firebase
 import FirebaseFirestore
 
 let COLLECTION_USERS = Firestore.firestore().collection("users")
-let COLLERTION_FOLLOWERS = Firestore.firestore().collection("followers")
-let COLLERTION_FOLLOWING = Firestore.firestore().collection("following")
+let COLLECTION_FOLLOWERS = Firestore.firestore().collection("followers")
+let COLLECTION_FOLLOWING = Firestore.firestore().collection("following")
