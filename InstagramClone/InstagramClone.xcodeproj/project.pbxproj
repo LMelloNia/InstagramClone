@@ -12,6 +12,7 @@
 		DD0551002AA99E080023F4F1 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0550FF2AA99E080023F4F1 /* UserCell.swift */; };
 		DD2D9E2D2B1AF790002ACB89 /* UploadPostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2D9E2C2B1AF790002ACB89 /* UploadPostController.swift */; };
 		DD2D9E2F2B1AFA91002ACB89 /* InputTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2D9E2E2B1AFA91002ACB89 /* InputTextView.swift */; };
+		DD2D9E312B1DA83D002ACB89 /*  PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2D9E302B1DA83D002ACB89 /*  PostService.swift */; };
 		DD32424B2AA0845200C85CD7 /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD32424A2AA0845200C85CD7 /* ImageUploader.swift */; };
 		DD32424D2AA0846300C85CD7 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD32424C2AA0846300C85CD7 /* AuthService.swift */; };
 		DD3242512AA08AA700C85CD7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD3242502AA08AA700C85CD7 /* GoogleService-Info.plist */; };
@@ -72,6 +73,7 @@
 		DD0550FF2AA99E080023F4F1 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		DD2D9E2C2B1AF790002ACB89 /* UploadPostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostController.swift; sourceTree = "<group>"; };
 		DD2D9E2E2B1AFA91002ACB89 /* InputTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextView.swift; sourceTree = "<group>"; };
+		DD2D9E302B1DA83D002ACB89 /*  PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " PostService.swift"; sourceTree = "<group>"; };
 		DD32424A2AA0845200C85CD7 /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		DD32424C2AA0846300C85CD7 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		DD3242502AA08AA700C85CD7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -240,6 +242,7 @@
 				DD32424A2AA0845200C85CD7 /* ImageUploader.swift */,
 				DD32424C2AA0846300C85CD7 /* AuthService.swift */,
 				DD9907DE2AA2031000737960 /* UserService.swift */,
+				DD2D9E302B1DA83D002ACB89 /*  PostService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -566,6 +569,7 @@
 				DD643BFF2A8E27BE00DEEDDC /* FeedController.swift in Sources */,
 				DD8BA97F2ABDEEED00DDEE2A /* UserCellViewModel.swift in Sources */,
 				DD643BFD2A8E0CAE00DEEDDC /* MainTabController.swift in Sources */,
+				DD2D9E312B1DA83D002ACB89 /*  PostService.swift in Sources */,
 				DDD7E3142A9C73A700E84CD1 /* Extensions.swift in Sources */,
 				DD32424B2AA0845200C85CD7 /* ImageUploader.swift in Sources */,
 				DD32424D2AA0846300C85CD7 /* AuthService.swift in Sources */,
