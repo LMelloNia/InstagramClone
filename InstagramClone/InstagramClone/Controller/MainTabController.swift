@@ -142,6 +142,8 @@ extension MainTabController: UploadPostControllerDelegate {
     func controllerDidFinishUploadingPost(_ controller: UploadPostController) {
         selectedIndex = 0
         controller.dismiss(animated: true, completion: nil)
+        
+        guard let feed = viewControllers?.first?.children.first as? FeedController else { return }
+        feed.handleRefresh()
     }
-
 }
