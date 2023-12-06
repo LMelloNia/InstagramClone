@@ -10,7 +10,14 @@ import UIKit
 private let reuseIdentifier = "CommentCell"
 
 class CommentController: UICollectionViewController {
+
     // MARK: - Properties
+
+    private lazy var commentInputView: CommentInputAccessoryView = {
+        let frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 50)
+        let cv = CommentInputAccessoryView(frame: frame)
+        return cv
+    }()
 
     // MARK: - Lifecycle
 
@@ -18,6 +25,26 @@ class CommentController: UICollectionViewController {
         super.viewDidLoad()
         configureCollectionView()
     }
+
+    override var canBecomeFirstResponder: Bool {
+        return true
+    }
+
+    override var inputAccessoryView: UIView? {
+        get { return commentInputView }
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.tabBar.isHidden = true
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        tabBarController?.tabBar.isHidden = false
+    }
+
+    // MARK: - Helpers
 
     func configureCollectionView() {
         navigationItem.title = "Comments"
@@ -36,7 +63,6 @@ extension CommentController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-        cell.backgroundColor = .red
         return cell
     }
 }
