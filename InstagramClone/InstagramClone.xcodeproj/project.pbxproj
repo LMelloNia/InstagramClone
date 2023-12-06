@@ -15,6 +15,8 @@
 		DD2D9E312B1DA83D002ACB89 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2D9E302B1DA83D002ACB89 /* PostService.swift */; };
 		DD2D9E332B1F0122002ACB89 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2D9E322B1F0122002ACB89 /* Post.swift */; };
 		DD2D9E352B1F0A97002ACB89 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2D9E342B1F0A97002ACB89 /* PostViewModel.swift */; };
+		DD2D9E372B2024B8002ACB89 /* CommentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2D9E362B2024B8002ACB89 /* CommentController.swift */; };
+		DD2D9E392B202867002ACB89 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2D9E382B202867002ACB89 /* CommentCell.swift */; };
 		DD32424B2AA0845200C85CD7 /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD32424A2AA0845200C85CD7 /* ImageUploader.swift */; };
 		DD32424D2AA0846300C85CD7 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD32424C2AA0846300C85CD7 /* AuthService.swift */; };
 		DD3242512AA08AA700C85CD7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD3242502AA08AA700C85CD7 /* GoogleService-Info.plist */; };
@@ -78,6 +80,8 @@
 		DD2D9E302B1DA83D002ACB89 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		DD2D9E322B1F0122002ACB89 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		DD2D9E342B1F0A97002ACB89 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
+		DD2D9E362B2024B8002ACB89 /* CommentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentController.swift; sourceTree = "<group>"; };
+		DD2D9E382B202867002ACB89 /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		DD32424A2AA0845200C85CD7 /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		DD32424C2AA0846300C85CD7 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		DD3242502AA08AA700C85CD7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -262,6 +266,7 @@
 				DD643C042A8E286700DEEDDC /* NotificationController.swift */,
 				DD643C062A8E287300DEEDDC /* ProfileController.swift */,
 				DD2D9E2C2B1AF790002ACB89 /* UploadPostController.swift */,
+				DD2D9E362B2024B8002ACB89 /* CommentController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -284,6 +289,7 @@
 				DDD7E3112A9C72CC00E84CD1 /* FeedCell.swift */,
 				DDD7E31A2A9F899F00E84CD1 /* CustomTextField.swift */,
 				DD0550FF2AA99E080023F4F1 /* UserCell.swift */,
+				DD2D9E382B202867002ACB89 /* CommentCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -558,6 +564,7 @@
 				DD2D9E352B1F0A97002ACB89 /* PostViewModel.swift in Sources */,
 				DDD7E31B2A9F899F00E84CD1 /* CustomTextField.swift in Sources */,
 				DD9907DC2AA1C19400737960 /* ProfileHeader.swift in Sources */,
+				DD2D9E372B2024B8002ACB89 /* CommentController.swift in Sources */,
 				DD2D9E2D2B1AF790002ACB89 /* UploadPostController.swift in Sources */,
 				DD643BCA2A8E0B8D00DEEDDC /* ViewController.swift in Sources */,
 				DDD7E3172A9DEF2500E84CD1 /* LoginController.swift in Sources */,
@@ -585,6 +592,7 @@
 				DD9907DA2AA1C18300737960 /* ProfileCell.swift in Sources */,
 				DD643BC82A8E0B8D00DEEDDC /* SceneDelegate.swift in Sources */,
 				DDD7E3192A9DEFA700E84CD1 /* RegistrationController.swift in Sources */,
+				DD2D9E392B202867002ACB89 /* CommentCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
