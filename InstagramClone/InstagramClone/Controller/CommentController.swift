@@ -27,7 +27,7 @@ class CommentController: UICollectionViewController {
 
     init(post: Post) {
         self.post = post
-        super.init(collectionViewLayout: UICollectionViewLayout())
+        super.init(collectionViewLayout: UICollectionViewFlowLayout())
     }
     
     required init?(coder: NSCoder) {
