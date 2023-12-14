@@ -124,7 +124,10 @@ extension FeedController: FeedCellDelegate {
         cell.viewModel?.post.didLike.toggle()
 
         if post.didLike {
-            print("DEBUG: Unlike post here...")
+            PostService.unlikePost(post: post) { _ in
+                cell.likeButton.setImage(#imageLiteral(resourceName: "like_selected"), for: .normal)
+                cell.likeButton.tintColor = .black
+            }
         } else {
             PostService.likePost(post: post) { _ in
                 cell.likeButton.setImage(#imageLiteral(resourceName: "like_selected"), for: .normal)
