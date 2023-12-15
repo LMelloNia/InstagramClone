@@ -24,6 +24,7 @@
 		DD32424B2AA0845200C85CD7 /* ImageUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD32424A2AA0845200C85CD7 /* ImageUploader.swift */; };
 		DD32424D2AA0846300C85CD7 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD32424C2AA0846300C85CD7 /* AuthService.swift */; };
 		DD3242512AA08AA700C85CD7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD3242502AA08AA700C85CD7 /* GoogleService-Info.plist */; };
+		DD3E543D2B2C2DA7006BC933 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3E543C2B2C2DA7006BC933 /* NotificationCell.swift */; };
 		DD643BC62A8E0B8D00DEEDDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD643BC52A8E0B8D00DEEDDC /* AppDelegate.swift */; };
 		DD643BC82A8E0B8D00DEEDDC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD643BC72A8E0B8D00DEEDDC /* SceneDelegate.swift */; };
 		DD643BCA2A8E0B8D00DEEDDC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD643BC92A8E0B8D00DEEDDC /* ViewController.swift */; };
@@ -93,6 +94,7 @@
 		DD32424A2AA0845200C85CD7 /* ImageUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploader.swift; sourceTree = "<group>"; };
 		DD32424C2AA0846300C85CD7 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		DD3242502AA08AA700C85CD7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		DD3E543C2B2C2DA7006BC933 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		DD643BC22A8E0B8D00DEEDDC /* InstagramClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD643BC52A8E0B8D00DEEDDC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD643BC72A8E0B8D00DEEDDC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 				DD0550FF2AA99E080023F4F1 /* UserCell.swift */,
 				DD2D9E382B202867002ACB89 /* CommentCell.swift */,
 				DD2D9E3A2B202FC0002ACB89 /* CommentInputAccessoryView.swift */,
+				DD3E543C2B2C2DA7006BC933 /* NotificationCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -607,6 +610,7 @@
 				DD9907DF2AA2031000737960 /* UserService.swift in Sources */,
 				DD9907DA2AA1C18300737960 /* ProfileCell.swift in Sources */,
 				DD643BC82A8E0B8D00DEEDDC /* SceneDelegate.swift in Sources */,
+				DD3E543D2B2C2DA7006BC933 /* NotificationCell.swift in Sources */,
 				DDD7E3192A9DEFA700E84CD1 /* RegistrationController.swift in Sources */,
 				DD2D9E392B202867002ACB89 /* CommentCell.swift in Sources */,
 			);
