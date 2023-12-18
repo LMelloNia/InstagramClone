@@ -27,6 +27,7 @@
 		DD3242512AA08AA700C85CD7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD3242502AA08AA700C85CD7 /* GoogleService-Info.plist */; };
 		DD3E543D2B2C2DA7006BC933 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3E543C2B2C2DA7006BC933 /* NotificationCell.swift */; };
 		DD3E543F2B2DB679006BC933 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3E543E2B2DB679006BC933 /* Notification.swift */; };
+		DD5302F72B310617007E4071 /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5302F62B310617007E4071 /* NotificationViewModel.swift */; };
 		DD643BC62A8E0B8D00DEEDDC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD643BC52A8E0B8D00DEEDDC /* AppDelegate.swift */; };
 		DD643BC82A8E0B8D00DEEDDC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD643BC72A8E0B8D00DEEDDC /* SceneDelegate.swift */; };
 		DD643BCA2A8E0B8D00DEEDDC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD643BC92A8E0B8D00DEEDDC /* ViewController.swift */; };
@@ -99,6 +100,7 @@
 		DD3242502AA08AA700C85CD7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		DD3E543C2B2C2DA7006BC933 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
 		DD3E543E2B2DB679006BC933 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		DD5302F62B310617007E4071 /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
 		DD643BC52A8E0B8D00DEEDDC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD643BC72A8E0B8D00DEEDDC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DD643BC92A8E0B8D00DEEDDC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 				DD8BA97E2ABDEEED00DDEE2A /* UserCellViewModel.swift */,
 				DD2D9E342B1F0A97002ACB89 /* PostViewModel.swift */,
 				DD2D9E402B270BD2002ACB89 /* CommentViewModel.swift */,
+				DD5302F62B310617007E4071 /* NotificationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -550,6 +553,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD2D9E412B270BD2002ACB89 /* CommentViewModel.swift in Sources */,
+				DD5302F72B310617007E4071 /* NotificationViewModel.swift in Sources */,
 				DD2D9E352B1F0A97002ACB89 /* PostViewModel.swift in Sources */,
 				DDD7E31B2A9F899F00E84CD1 /* CustomTextField.swift in Sources */,
 				DD9907DC2AA1C19400737960 /* ProfileHeader.swift in Sources */,
