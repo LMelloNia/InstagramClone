@@ -7,6 +7,12 @@
 
 import UIKit
 
+protocol NotificationCellDelegate: class {
+    func cell(_ cell: NotificationCell, wantsToFollow user: User)
+    func cell(_ cell: NotificationCell, wantsToUnfollow uid: String)
+    func cell(_ cell: NotificationCell, wantsToViewPost postId: String)
+}
+
 class NotificationCell: UITableViewCell {
 
     // MARK: - Properties
@@ -17,12 +23,17 @@ class NotificationCell: UITableViewCell {
         }
     }
 
+    weak var delegate: NotificationCellDelegate?
+
     private let profileImageView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
         iv.backgroundColor = .lightGray
-        iv.image = #imageLiteral(resourceName: "venom-7")
+
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleProfileImageTapped))
+        iv.isUserInteractionEnabled = true
+        iv.addGestureRecognizer(tap)
         return iv
     }()
 
@@ -33,7 +44,7 @@ class NotificationCell: UITableViewCell {
         return label
     }()
 
-    private let postImageView: UIImageView = {
+    private lazy var postImageView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
         iv.clipsToBounds = true
@@ -46,7 +57,7 @@ class NotificationCell: UITableViewCell {
         return iv
     }()
 
-    private let followButton: UIButton = {
+    private lazy var followButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Loading", for: .normal)
         button.layer.cornerRadius = 3
@@ -81,8 +92,6 @@ class NotificationCell: UITableViewCell {
         infoLabel.centerY(inView: profileImageView,
                           leftAnchor: profileImageView.rightAnchor, paddingLeft: 8)
         infoLabel.anchor(right: followButton.leftAnchor, paddingRight: 4)
-
-        followButton.isHidden = true
     }
     
     required init?(coder: NSCoder) {
@@ -91,12 +100,18 @@ class NotificationCell: UITableViewCell {
 
     // MARK: - Actions
 
+    @objc func handleProfileImageTapped() {
+        print("123")
+    }
+
     @objc func handleFollowTapped() {
 
     }
 
     @objc func handlePostTapped() {
-
+        guard let viewModel else { return }
+        guard let postId = viewModel.notification.postId else { return }
+        delegate?.cell(self, wantsToViewPost: postId)
     }
 
     // MARK: - Helpers
@@ -111,5 +126,9 @@ class NotificationCell: UITableViewCell {
 
         followButton.isHidden = !viewModel.shouldHidePostImage
         postImageView.isHidden = viewModel.shouldHidePostImage
+
+        followButton.setTitle(viewModel.followButtonText, for: .normal)
+        followButton.backgroundColor = viewModel.followButtonBackgroundColor
+        followButton.setTitleColor(viewModel.followButtonTextColor, for: .normal)
     }
 }

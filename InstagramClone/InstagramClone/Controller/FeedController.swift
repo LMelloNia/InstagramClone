@@ -62,9 +62,9 @@ class FeedController: UICollectionViewController {
 
     func checkIfUserLikedPosts() {
         self.posts.forEach { post in
-            PostService.checkIfUserLikedPost(post: post) { didLiked in
+            PostService.checkIfUserLikedPost(post: post) { didLike in
                 if let index = self.posts.firstIndex(where: { $0.postId == post.postId }) {
-                    self.posts[index].didLike = didLiked
+                    self.posts[index].didLike = didLike
                 }
             }
         }
