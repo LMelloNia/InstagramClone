@@ -23,7 +23,7 @@ struct NotificationService {
                                    "username": fromUser.username]
 
         if let post {
-            data["postid"] = post.postId
+            data["postId"] = post.postId
             data["postImageUrl"] = post.imageUrl
         }
 

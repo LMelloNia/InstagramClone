@@ -8,7 +8,7 @@
 import UIKit
 
 struct NotificationViewModel {
-    let notification: Notification
+    var notification: Notification
 
     init(notification: Notification) {
         self.notification = notification
@@ -20,6 +20,10 @@ struct NotificationViewModel {
 
     var profileImageUrl: URL? {
         return URL(string: notification.userProfileImageUrl)
+    }
+
+    var postId: String? {
+        return notification.postId
     }
 
     var notificationMessage: NSAttributedString {

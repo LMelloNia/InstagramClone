@@ -8,7 +8,7 @@
 import UIKit
 
 protocol NotificationCellDelegate: class {
-    func cell(_ cell: NotificationCell, wantsToFollow user: User)
+    func cell(_ cell: NotificationCell, wantsToFollow uid: String)
     func cell(_ cell: NotificationCell, wantsToUnfollow uid: String)
     func cell(_ cell: NotificationCell, wantsToViewPost postId: String)
 }
@@ -30,10 +30,6 @@ class NotificationCell: UITableViewCell {
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
         iv.backgroundColor = .lightGray
-
-        let tap = UITapGestureRecognizer(target: self, action: #selector(handleProfileImageTapped))
-        iv.isUserInteractionEnabled = true
-        iv.addGestureRecognizer(tap)
         return iv
     }()
 
@@ -100,17 +96,18 @@ class NotificationCell: UITableViewCell {
 
     // MARK: - Actions
 
-    @objc func handleProfileImageTapped() {
-        print("123")
-    }
-
     @objc func handleFollowTapped() {
-
+        guard let viewModel else { return }
+        
+        if viewModel.notification.userIsFollowed {
+            delegate?.cell(self, wantsToUnfollow: viewModel.notification.uid)
+        } else {
+            delegate?.cell(self, wantsToFollow: viewModel.notification.uid)
+        }
     }
 
     @objc func handlePostTapped() {
-        guard let viewModel else { return }
-        guard let postId = viewModel.notification.postId else { return }
+        guard let postId = viewModel?.notification.postId else { return }
         delegate?.cell(self, wantsToViewPost: postId)
     }
 
