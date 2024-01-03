@@ -11,6 +11,7 @@
 		749CC1FD456B0156BB6C932C /* Pods_InstagramClone_InstagramCloneUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB72448C603E13B000F786E9 /* Pods_InstagramClone_InstagramCloneUITests.framework */; };
 		9355BFC33AFAC1059A607342 /* Pods_InstagramCloneTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D3BE54943FD014E22BA6B79 /* Pods_InstagramCloneTests.framework */; };
 		DD0551002AA99E080023F4F1 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0550FF2AA99E080023F4F1 /* UserCell.swift */; };
+		DD188CBE2B454C530011CB96 /* ResetPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD188CBD2B454C530011CB96 /* ResetPasswordController.swift */; };
 		DD2D9E2D2B1AF790002ACB89 /* UploadPostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2D9E2C2B1AF790002ACB89 /* UploadPostController.swift */; };
 		DD2D9E2F2B1AFA91002ACB89 /* InputTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2D9E2E2B1AFA91002ACB89 /* InputTextView.swift */; };
 		DD2D9E312B1DA83D002ACB89 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2D9E302B1DA83D002ACB89 /* PostService.swift */; };
@@ -84,6 +85,7 @@
 		CB72448C603E13B000F786E9 /* Pods_InstagramClone_InstagramCloneUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstagramClone_InstagramCloneUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D50883A8484AAE922D517AF8 /* Pods-InstagramClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramClone.release.xcconfig"; path = "Target Support Files/Pods-InstagramClone/Pods-InstagramClone.release.xcconfig"; sourceTree = "<group>"; };
 		DD0550FF2AA99E080023F4F1 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		DD188CBD2B454C530011CB96 /* ResetPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordController.swift; sourceTree = "<group>"; };
 		DD2D9E2C2B1AF790002ACB89 /* UploadPostController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostController.swift; sourceTree = "<group>"; };
 		DD2D9E2E2B1AFA91002ACB89 /* InputTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextView.swift; sourceTree = "<group>"; };
 		DD2D9E302B1DA83D002ACB89 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
@@ -308,6 +310,7 @@
 			children = (
 				DDD7E3162A9DEF2500E84CD1 /* LoginController.swift */,
 				DDD7E3182A9DEFA700E84CD1 /* RegistrationController.swift */,
+				DD188CBD2B454C530011CB96 /* ResetPasswordController.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -576,6 +579,7 @@
 				DD2D9E3B2B202FC0002ACB89 /* CommentInputAccessoryView.swift in Sources */,
 				DD93CACE2AA214D1004C7D7C /* ProfileHeaderViewModel.swift in Sources */,
 				DD2D9E2F2B1AFA91002ACB89 /* InputTextView.swift in Sources */,
+				DD188CBE2B454C530011CB96 /* ResetPasswordController.swift in Sources */,
 				DD9907E12AA2035A00737960 /* Constants.swift in Sources */,
 				DD643BFF2A8E27BE00DEEDDC /* FeedController.swift in Sources */,
 				DD8BA97F2ABDEEED00DDEE2A /* UserCellViewModel.swift in Sources */,
