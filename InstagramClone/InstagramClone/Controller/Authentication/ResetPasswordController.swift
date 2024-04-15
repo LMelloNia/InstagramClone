@@ -12,6 +12,8 @@ class ResetPasswordController: UIViewController {
     // MARK: - Properties
 
     private let emailTextField = CustomTextField(placeholder: "Email")
+    private var viewModel = ResetPasswordViewModel()
+
     private let iconImage: UIImageView = {
         let iv = UIImageView(image: #imageLiteral(resourceName: "Instagram_logo_white"))
         iv.contentMode = .scaleAspectFill
@@ -26,8 +28,9 @@ class ResetPasswordController: UIViewController {
         button.layer.cornerRadius = 5
         button.setHeight(50)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
-        button.isEnabled = false
+        button.isEnabled = true
         button.addTarget(self, action: #selector(handleResetPassword), for: .touchUpInside)
+        print("리셋패스워드 버튼 초기화 타이밍")
         return button
     }
 
@@ -49,7 +52,15 @@ class ResetPasswordController: UIViewController {
     // MARK: - Actions
 
     @objc func handleResetPassword() {
+        print("리셋 패스워드 버튼 눌림")
+    }
 
+    @objc func textDidChange(sender: UITextField) {
+        if sender == emailTextField {
+            viewModel.email = sender.text
+        }
+
+        updateForm()
     }
 
     @objc func handleDismissal() {
@@ -60,6 +71,8 @@ class ResetPasswordController: UIViewController {
 
     func configureUI() {
         configureGradienLayer()
+
+        emailTextField.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
 
         view.addSubview(backButton)
         backButton.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, paddingTop: 16, paddingLeft: 16)
@@ -76,5 +89,22 @@ class ResetPasswordController: UIViewController {
         view.addSubview(stack)
         stack.anchor(top: iconImage.bottomAnchor, left: view.leftAnchor,
                      right: view.rightAnchor, paddingTop: 32, paddingLeft: 32, paddingRight: 32)
+
+        resetPasswordButton.titleLabel?.text = "도대체 왜 안되는 거임??"
+    }
+}
+
+// MARK: - FormViewModel
+
+extension ResetPasswordController: FormViewModel {
+    func updateForm() {
+        resetPasswordButton.setTitle("왜", for: .normal)
+        print("업데이트 백그라운드 컬러")
+        resetPasswordButton.backgroundColor = viewModel.buttonBackgroundColor
+        print("업데이트 백그라운드 타이틀컬러")
+        resetPasswordButton.setTitleColor(viewModel.buttonTitleColor, for: .normal)
+        print("업데이트 조작가능")
+        resetPasswordButton.isEnabled = viewModel.formIsValid
+        print("업데이트 폼")
     }
 }
